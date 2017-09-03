@@ -1,3 +1,7 @@
+# Model that predicts the probability of default for credit applicants.
+# First layer uses models such as logistic regression, random forest, and neural networks.  Finishes with a layer of xgboost for
+# final predictions.  AUROC is used to evaluate model performance.
+
 import pandas as pd
 import numpy as np
 
