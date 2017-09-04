@@ -70,11 +70,16 @@ for ds in combine:
     ds['NumberOfDependents'] = ds['NumberOfDependents'].astype(int)
 
 
+for ds in combine:
+    ds['MonthlyDebt'] = ds.DebtRatio * ds.MonthlyIncome
+
 # Expect some data to be normally distributed, log transform them... also keeps model inputs from getting too high
 combine[0]['MonthlyIncome'] = np.log1p(combine[0]['MonthlyIncome'])
 combine[0]['age'] = np.log1p(combine[0]['age'])
 combine[1]['MonthlyIncome'] = np.log1p(combine[1]['MonthlyIncome'])
 combine[1]['age'] = np.log1p(combine[1]['age'])
+combine[0]['MonthlyDebt'] = np.log1p(combine[0]['MonthlyDebt'])
+combine[1]['MonthlyDebt'] = np.log1p(combine[1]['MonthlyDebt'])
 
 
 # Creating some features that improve performance.
