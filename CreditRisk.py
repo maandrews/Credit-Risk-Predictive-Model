@@ -197,9 +197,6 @@ gnb.fit(x_train,y_train)
 rfreg = RandomForestRegressor(n_estimators = 200, random_state=12)
 rfreg.fit(x_train,y_train)
 
-# **Best solo performer from above is AdaBoost with AUROC of ~0.8612. A close second was the MLP, with AUROC of ~0.8574
-# on the validation set.
-
 
 predictions_LR_train = logreg.predict_proba(x_2)[:,1]
 predictions_DT_train = dt.predict_proba(x_2)[:,1]
