@@ -207,6 +207,8 @@ combine[0]['totDefProb'] = np.log1p(combine[0]['totDefProb'])
 combine[1]['totDefProb'] = np.log1p(combine[1]['totDefProb'])
 
 
+
+
 # Expect some data to be normally distributed, log transform them... also keeps model inputs from getting too high
 combine[0]['MonthlyIncome'] = np.log1p(combine[0]['MonthlyIncome'])
 combine[0]['age'] = np.log1p(combine[0]['age'])
@@ -256,8 +258,7 @@ combine[0] = combine[0].drop(["defProb"], axis=1)
 combine[1] = combine[1].drop(["defProb"], axis=1)
 combine[0] = combine[0].drop(["defProbInc"], axis=1)
 combine[1] = combine[1].drop(["defProbInc"], axis=1)
-combine[0] = combine[0].drop(["defProbDebt"], axis=1)
-combine[1] = combine[1].drop(["defProbDebt"], axis=1)
+
 
 # log transform other columns as it improves performance having smaller inputs.  Also not unreasonable to assume they
 # are Gaussian distributed.
@@ -408,6 +409,14 @@ final_pred = meta_boost.predict_proba(next_x_test)[:,1]
 
 sub = pd.DataFrame({'Id': combine[1]['Unnamed: 0'], 'Probability': final_pred})
 sub.to_csv("Credit_Risk.csv", index=False)
+
+
+
+
+
+
+
+
 
 
 
