@@ -92,6 +92,7 @@ combine[0]['Income-NumLoans-RatioPre'] = np.log1p(combine[0]['Income-NumLoans-Ra
 combine[1]['Income-Dep-RatioPre'] = np.log1p(combine[1]['Income-Dep-RatioPre'])
 combine[1]['Income-NumLoans-RatioPre'] = np.log1p(combine[1]['Income-NumLoans-RatioPre'])
 
+# Creating some features that improve performance.
 # Obtain probabilities of default for different age groups.
 combine[0]['defProb'] = 0
 combine[1]['defProb'] = 0
@@ -216,7 +217,6 @@ combine[1]['MonthlyIncome'] = np.log1p(combine[1]['MonthlyIncome'])
 combine[1]['age'] = np.log1p(combine[1]['age'])
 
 
-# Creating some features that improve performance.
 # Relating income to dependents and current loans directly may be useful:
 for ds in combine:
     ds['Income-Dep-Ratio'] = ds.MonthlyIncome / (ds.NumberOfDependents + 1)
