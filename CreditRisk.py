@@ -261,7 +261,8 @@ combine[1] = combine[1].drop(["defProbInc"], axis=1)
 
 
 # log transform other columns as it improves performance having smaller inputs.  Also not unreasonable to assume they
-# are Gaussian distributed.
+# are Gaussian distributed. (Really should normalize and perform either yeo-johnson or box-cox to transform the best way but was running out of the time frame
+# I set for myself to complete this, so this will have to do in a pinch!)
 combine[0]['Income-Dep-Ratio'] = np.log1p(combine[0]['Income-Dep-Ratio'])
 combine[0]['Income-NumLoans-Ratio'] = np.log1p(combine[0]['Income-NumLoans-Ratio'])
 combine[0]['RevolvingUtilizationOfUnsecuredLines'] = np.log1p(combine[0]['RevolvingUtilizationOfUnsecuredLines'])
