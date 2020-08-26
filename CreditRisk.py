@@ -210,7 +210,7 @@ combine[1]['totDefProb'] = np.log1p(combine[1]['totDefProb'])
 
 
 
-# Expect some data to be normally distributed, log transform them... also keeps model inputs from getting too high
+# Expect some data to be normally distributed, log transform them (using something like a box-cox preceeded by scaling the data is the better, more rigorous option here...)
 combine[0]['MonthlyIncome'] = np.log1p(combine[0]['MonthlyIncome'])
 combine[0]['age'] = np.log1p(combine[0]['age'])
 combine[1]['MonthlyIncome'] = np.log1p(combine[1]['MonthlyIncome'])
@@ -261,7 +261,7 @@ combine[1] = combine[1].drop(["defProbInc"], axis=1)
 
 
 # log transform other columns as it improves performance having smaller inputs.  Also not unreasonable to assume they
-# are Gaussian distributed. (Really should normalize and perform either yeo-johnson or box-cox to transform the best way but was running out of the time frame
+# are Gaussian distributed. (Really should scale and perform either yeo-johnson or box-cox to transform the best way but was running out of the time frame
 # I set for myself to complete this, so this will have to do in a pinch!)
 combine[0]['Income-Dep-Ratio'] = np.log1p(combine[0]['Income-Dep-Ratio'])
 combine[0]['Income-NumLoans-Ratio'] = np.log1p(combine[0]['Income-NumLoans-Ratio'])
