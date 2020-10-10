@@ -10,6 +10,3 @@ The model gives an AUROC of 0.867108.  The winning team in the competition had a
 bad for a weekend project, top 12% score among nearly 1000 teams.
 
 If instead of the first layer predictions being the only features to the meta model, I use them as extra features to the ones that already exist, I can boost the score to 0.867119, which brings me up a couple spots in the leaderboard.
-
-Note: If you want to run this model, you may have to do something different than me when it comes to using xgboost.  That is, simply 
-running what is uploaded may not work because of how xgboost is installed.
