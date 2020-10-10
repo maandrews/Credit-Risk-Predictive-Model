@@ -8,5 +8,3 @@ The model I uploaded uses a stacking approach where the first layer contains mul
 
 The model gives an AUROC of 0.867108.  The winning team in the competition had an AUROC of 0.869558.  I ended up not doing too
 bad for a weekend project, top 12% score among nearly 1000 teams.
-
-If instead of the first layer predictions being the only features to the meta model, I use them as extra features to the ones that already exist, I can boost the score to 0.867119, which brings me up a couple spots in the leaderboard.
